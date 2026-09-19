@@ -462,38 +462,8 @@
     <a href="#top" class="brand" aria-label="OPTIMUS Estate — на главную">
       <img src="logo.png" alt="OPTIMUS Estate" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'brand-fallback',innerHTML:'<span class=\'brand-mark\'></span>OPTIMUS ESTATE'}))">
     </a>
-
-    <nav class="main-nav" aria-label="Основная навигация">
-      <ul>
-        <li><a href="#about">О комплексе</a></li>
-        <li><a href="#benefits">Преимущества</a></li>
-        <li><a href="#location">Локация</a></li>
-        <li><a href="#partners">Партнёрам</a></li>
-        <li><a href="#contacts">Контакты</a></li>
-      </ul>
-    </nav>
-
-    <div class="header-right">
-      <div class="lang-switch">
-        RU
-        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileNav">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
   </div>
 </header>
-
-<nav class="mobile-nav" id="mobileNav" aria-label="Мобильная навигация">
-  <ul>
-    <li><a href="#about">О комплексе</a></li>
-    <li><a href="#benefits">Преимущества</a></li>
-    <li><a href="#location">Локация</a></li>
-    <li><a href="#partners">Партнёрам</a></li>
-    <li><a href="#contacts">Контакты</a></li>
-  </ul>
-</nav>
 
 <main id="top">
 
@@ -841,23 +811,7 @@
 </main>
 
 <script>
-  // Mobile menu toggle
-  (function(){
-    var toggle = document.getElementById('menuToggle');
-    var nav = document.getElementById('mobileNav');
-    if(!toggle || !nav) return;
-    toggle.addEventListener('click', function(){
-      var open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    nav.querySelectorAll('a').forEach(function(link){
-      link.addEventListener('click', function(){
-        nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  })();
-
+  
   // Gallery arrow scroll (mobile horizontal scroll)
   (function(){
     var grid = document.getElementById('galleryGrid');
