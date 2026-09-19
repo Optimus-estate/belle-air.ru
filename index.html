@@ -276,23 +276,18 @@
   /* ===== GALLERY ===== */
   .gallery{ padding:20px 0 100px; }
   .gallery-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:36px; }
-  .gallery-nav{ display:flex; gap:10px; }
-  .nav-circle{
-    width:42px; height:42px; border-radius:50%;
-    border:1px solid var(--line); background:var(--bg-white);
-    display:flex; align-items:center; justify-content:center;
-    color:var(--blue-deep);
-    transition: border-color .18s ease, background-color .18s ease;
-  }
-  .nav-circle:hover{ border-color:var(--blue-accent); background:var(--bg-soft); }
   .gallery-grid{
-    display:grid; grid-template-columns: repeat(4, 1fr); gap:16px;
+    display:grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-rows: 220px 220px;
+    gap:16px;
   }
   .gallery-item{
     position:relative; border-radius:var(--radius-md); overflow:hidden;
-    aspect-ratio: 3 / 3.6;
     box-shadow: 0 10px 24px rgba(7,59,92,0.08);
   }
+  .gallery-item-big{ grid-column: 1; grid-row: 1 / 3; }
+  .gallery-item-wide{ grid-column: 2 / 4; grid-row: 2; }
   .gallery-item .ph-image{ height:100%; }
   .gallery-item img{ width:100%; height:100%; object-fit:cover; }
   .gallery-cap{
@@ -419,7 +414,9 @@
     .menu-toggle{ display:flex; }
     .header-right .lang-switch{ display:none; }
     .benefits .container{ grid-template-columns: repeat(2, 1fr); }
-    .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
+    .gallery-grid{ grid-template-columns: 1fr 1fr; grid-template-rows: 180px 180px; }
+    .gallery-item-big{ grid-column: 1 / 3; grid-row: 1; }
+    .gallery-item-wide{ grid-column: 1 / 3; grid-row: 2; }
   }
 
   @media (max-width: 640px){
@@ -431,7 +428,9 @@
     .about-grid{ grid-template-columns: 1fr 1fr; }
     .stats-row{ grid-template-columns: 1fr 1fr; }
     .gallery{ padding:0 0 64px; }
-    .gallery-grid{ grid-template-columns: 1fr; }
+    .gallery-grid{ grid-template-columns: 1fr; grid-template-rows: none; }
+    .gallery-item{ aspect-ratio: 4 / 3; }
+    .gallery-item-big, .gallery-item-wide{ grid-column: 1; grid-row: auto; }
     .location{ padding:64px 0; }
     .location-grid{ grid-template-columns: 1fr; }
     .location-map{ grid-column:auto; }
@@ -609,18 +608,10 @@
           <span class="eyebrow">Галерея</span>
           <h2 class="section-title">Атмосфера Belle Air</h2>
         </div>
-        <div class="gallery-nav">
-          <button class="nav-circle" id="galleryPrev" aria-label="Предыдущие фото">
-            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          </button>
-          <button class="nav-circle" id="galleryNext" aria-label="Следующие фото">
-            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-        </div>
       </div>
 
       <div class="gallery-grid" id="galleryGrid">
-        <figure class="gallery-item">
+        <figure class="gallery-item gallery-item-big">
           <div class="ph-image"><img src="gallery-1.jpg" alt="Архитектура комплекса Belle Air" loading="lazy"></div>
           <figcaption class="gallery-cap">Архитектура комплекса</figcaption>
         </figure>
@@ -632,7 +623,7 @@
           <div class="ph-image"><img src="gallery-3.jpg" alt="Панорамные виды Belle Air" loading="lazy"></div>
           <figcaption class="gallery-cap">Панорамные виды</figcaption>
         </figure>
-        <figure class="gallery-item">
+        <figure class="gallery-item gallery-item-wide">
           <div class="ph-image"><img src="gallery-4.jpg" alt="Комфортные апартаменты Belle Air" loading="lazy"></div>
           <figcaption class="gallery-cap">Комфортные апартаменты</figcaption>
         </figure>
@@ -778,22 +769,6 @@
 </main>
 
 <script>
-  
-  // Gallery arrow scroll (mobile horizontal scroll)
-  (function(){
-    var grid = document.getElementById('galleryGrid');
-    var prev = document.getElementById('galleryPrev');
-    var next = document.getElementById('galleryNext');
-    if(!grid) return;
-    function scrollByCard(dir){
-      var card = grid.querySelector('.gallery-item');
-      var amount = card ? card.offsetWidth + 16 : 300;
-      grid.scrollBy({ left: dir * amount, behavior: 'smooth' });
-    }
-    if(prev) prev.addEventListener('click', function(){ scrollByCard(-1); });
-    if(next) next.addEventListener('click', function(){ scrollByCard(1); });
-  })();
-
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
