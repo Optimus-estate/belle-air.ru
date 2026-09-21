@@ -208,16 +208,11 @@
   .hero-media img{ width:100%; height:100%; object-fit:cover; }
   .hero-badge{
     position:absolute; right:20px; bottom:20px;
-    background:rgba(7,59,92,0.82);
-    color:var(--white);
-    padding:12px 18px;
-    border-radius:10px;
-    font-family:var(--font-serif);
-    text-align:right;
-    backdrop-filter: blur(4px);
   }
-  .hero-badge strong{ display:block; font-size:15px; letter-spacing:0.04em; }
-  .hero-badge span{ display:block; font-family:var(--font-sans); font-size:10.5px; letter-spacing:0.22em; color:var(--blue-accent); margin-top:3px; }
+  .hero-badge img{
+    display:block; height:64px; width:auto;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
+  }
 
   /* ===== BENEFITS STRIP ===== */
   .benefits{ background:var(--bg-white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
@@ -370,6 +365,8 @@
     border-bottom:1px solid var(--line);
   }
   .footer-brand{ display:flex; flex-direction:column; gap:12px; }
+  .footer-logos{ display:flex; align-items:center; gap:16px; }
+  .footer-logo-divider{ width:1px; height:36px; background:var(--line); }
   .footer-tag{ font-size:13.5px; color:var(--text-soft); max-width:220px; line-height:1.5; }
 
   .footer-contacts-heading{
@@ -504,8 +501,7 @@
       <div class="hero-media">
         <div class="ph-image"><img src="hero.png" alt="Комплекс Belle Air — бассейн и вид на море" loading="eager"></div>
         <div class="hero-badge">
-          <strong>BELLE AIR</strong>
-          <span>SVETI VLAS</span>
+          <img src="logo-belleair.png" alt="Belle Air — Sveti Vlas">
         </div>
       </div>
     </div>
@@ -718,7 +714,11 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="logo.png" alt="OPTIMUS Estate" style="height:100px;width:auto;" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'brand-fallback',innerHTML:'<span class=\'brand-mark\'></span>OPTIMUS ESTATE'}))">
+          <div class="footer-logos">
+            <img src="logo.png" alt="OPTIMUS Estate" style="height:60px;width:auto;" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'brand-fallback',innerHTML:'<span class=\'brand-mark\'></span>OPTIMUS ESTATE'}))">
+            <span class="footer-logo-divider"></span>
+            <img src="logo-belleair.png" alt="Belle Air — Sveti Vlas" style="height:74px;width:auto;">
+          </div>
           <p class="footer-tag">Надёжный партнёр на болгарском побережье</p>
         </div>
 
