@@ -120,6 +120,7 @@
     border-bottom:1px solid var(--line);
   }
   .site-header .container{ display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .header-belleair{ height:40px; width:auto; flex-shrink:0; }
   .brand{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
   .brand img{ height:50px; width:auto; }
   .brand-fallback{
@@ -206,13 +207,7 @@
   }
   .hero-media .ph-image{ aspect-ratio: 5 / 4; }
   .hero-media img{ width:100%; height:100%; object-fit:cover; }
-  .hero-badge{
-    position:absolute; right:20px; bottom:20px;
-  }
-  .hero-badge img{
-    display:block; height:64px; width:auto;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
-  }
+
 
   /* ===== BENEFITS STRIP ===== */
   .benefits{ background:var(--bg-white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
@@ -418,6 +413,7 @@
 
   @media (max-width: 640px){
     .container{ padding:0 20px; }
+    .header-belleair{ height:28px; }
     .hero .container{ padding-top:36px; padding-bottom:48px; }
     .hero-cta{ flex-direction:column; align-items:stretch; }
     .hero-cta .btn{ justify-content:center; }
@@ -458,6 +454,7 @@
     <a href="#top" class="brand" aria-label="OPTIMUS Estate — на главную">
       <img src="logo.png" alt="OPTIMUS Estate" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'brand-fallback',innerHTML:'<span class=\'brand-mark\'></span>OPTIMUS ESTATE'}))">
     </a>
+    <img src="logo-belleair.png" alt="Belle Air — Sveti Vlas" class="header-belleair">
   </div>
 </header>
 
@@ -500,9 +497,6 @@
 
       <div class="hero-media">
         <div class="ph-image"><img src="hero.png" alt="Комплекс Belle Air — бассейн и вид на море" loading="eager"></div>
-        <div class="hero-badge">
-          <img src="logo.belleair.png" alt="Belle Air — Sveti Vlas">
-        </div>
       </div>
     </div>
   </section>
@@ -610,7 +604,7 @@
         <figure class="gallery-item gallery-item-big">
           <div class="ph-image"><img src="gallery-3.jpg" alt="Панорамные виды Belle Air" loading="lazy"></div>
           <figcaption class="gallery-cap">Панорамные виды</figcaption>
-        </figure>
+          </figure>
         <figure class="gallery-item">
           <div class="ph-image"><img src="gallery-2.jpg" alt="Бассейн и зона отдыха Belle Air" loading="lazy"></div>
           <figcaption class="gallery-cap">Бассейн и зона отдыха</figcaption>
@@ -715,9 +709,9 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logos">
-            <img src="logo.png" alt="OPTIMUS Estate" style="height:60px;width:auto;" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'brand-fallback',innerHTML:'<span class=\'brand-mark\'></span>OPTIMUS ESTATE'}))">
+            <img src="logo.png" alt="OPTIMUS Estate" style="height:30px;width:auto;" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'brand-fallback',innerHTML:'<span class=\'brand-mark\'></span>OPTIMUS ESTATE'}))">
             <span class="footer-logo-divider"></span>
-            <img src="logo.belleair.png" alt="Belle Air — Sveti Vlas" style="height:74px;width:auto;">
+            <img src="logo-belleair.png" alt="Belle Air — Sveti Vlas" style="height:38px;width:auto;">
           </div>
           <p class="footer-tag">Надёжный партнёр на болгарском побережье</p>
         </div>
