@@ -157,14 +157,16 @@
     white-space:nowrap;
   }
   .partner-badge::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--gold); }
-  .partner-btn{
-    display:inline-flex; align-items:center; gap:7px;
-    padding:6px 14px; border-radius:6px;
-    background:var(--white); color:var(--blue-deep); border:1.5px solid var(--blue);
-    font-size:clamp(11.5px, 0.2vw + 11px, 13px); font-weight:700; white-space:nowrap;
-    transition: background-color .18s ease, color .18s ease;
+  .btn3d{
+    display:inline-flex; align-items:center; gap:8px; flex-shrink:0;
+    background:linear-gradient(180deg,#E3C77F 0%,#C9A24B 100%);
+    color:#1A1A1A; font-size:12px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; white-space:nowrap;
+    padding:10px 16px; border-radius:6px; border:1px solid #A8862F;
+    box-shadow:0 4px 0 #8C6E22, 0 7px 12px rgba(7,59,92,0.28), inset 0 1px 0 rgba(255,255,255,0.55);
+    transition:transform .12s ease, box-shadow .12s ease;
   }
-  .partner-btn:hover{ background:var(--blue); color:var(--white); }
+  .btn3d:hover{ transform:translateY(2px); box-shadow:0 2px 0 #8C6E22, 0 4px 8px rgba(7,59,92,0.25), inset 0 1px 0 rgba(255,255,255,0.55); }
+  .btn3d:active{ transform:translateY(4px); box-shadow:0 0 0 #8C6E22, 0 2px 4px rgba(7,59,92,0.2); }
   .hero-title{
     font-family:var(--font-serif);
     font-weight:700;
@@ -340,7 +342,7 @@
   .site-footer{ background:var(--bg-white); padding:clamp(44px, 5vw, 64px) 0 clamp(24px, 3vw, 36px); }
   .footer-top{
     display:grid;
-    grid-template-columns: minmax(0, 260px) minmax(0, 1fr) minmax(0, 240px);
+    grid-template-columns: minmax(0, 220px) minmax(0, 1fr) auto;
     gap:clamp(28px, 3vw, 40px);
     padding-bottom:40px;
     border-bottom:1px solid var(--line);
@@ -354,11 +356,11 @@
     font-family:var(--font-serif); font-size:15px; color:var(--blue-deep); font-weight:700;
     text-align:center; margin-bottom:18px;
   }
-  .contacts-row{ display:flex; justify-content:center; gap:clamp(24px, 4vw, 48px); flex-wrap:wrap; }
-  .contact-card{ display:flex; flex-direction:column; gap:10px; min-width:min(200px, 100%); }
+  .contacts-row{ display:flex; justify-content:center; gap:clamp(20px, 2.4vw, 28px); flex-wrap:wrap; }
+  .contact-card{ display:flex; flex-direction:column; gap:10px; min-width:min(180px, 100%); }
   .contact-name{ display:flex; align-items:center; gap:8px; font-weight:600; font-size:14.5px; color:var(--text); }
   .contact-phone{ display:flex; align-items:center; gap:8px; font-size:14px; color:var(--text-soft); }
-  .contact-card .btn{ margin-top:2px; }
+  .contact-card .btn{ margin-top:2px; padding:11px 14px; font-size:13.5px; }
 
   .footer-email{ display:flex; flex-direction:column; align-items:flex-end; gap:10px; text-align:right; }
   .footer-email a{ display:flex; align-items:center; gap:8px; font-size:14px; color:var(--blue-deep); font-weight:500; word-break:break-all; }
@@ -401,6 +403,8 @@
   }
 
   @media (max-width: 640px){
+    .btn3d{ font-size:10.5px; padding:8px 11px; letter-spacing:0.03em; }
+    .btn3d svg{ display:none; }
     :root{ --header-h: 60px; --radius-lg: 14px; --radius-md: 10px; }
     .hero-media .ph-image{ aspect-ratio: 4 / 3; }
     .hero-cta{ flex-direction:column; align-items:stretch; }
@@ -421,6 +425,7 @@
   }
 
   @media (max-width: 400px){
+    .btn3d{ font-size:10.5px; padding:8px 11px; gap:6px; letter-spacing:0.03em; }
     .benefits .container{ grid-template-columns: minmax(0, 1fr); }
     .about-grid{ gap:10px; }
     .partners-points{ gap:16px; }
@@ -434,6 +439,7 @@
     <a href="#top" class="brand" aria-label="OPTIMUS Estate — на главную">
       <img src="logo.png" alt="OPTIMUS Estate" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'brand-fallback',innerHTML:'<span class=\'brand-mark\'></span>OPTIMUS ESTATE'}))">
     </a>
+    <a href="https://optimus-estate.github.io/general/" target="_blank" rel="noopener" class="btn3d">Партнёрская программа <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
   </div>
 </header>
 
@@ -444,9 +450,6 @@
       <div class="hero-copy">
         <div class="partner-row">
           <span class="partner-badge">Только для партнёров</span>
-          <a href="https://optimus-estate.github.io/general/" target="_blank" rel="noopener" class="partner-btn">Партнёрская программа
-            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
         </div>
         <h1 class="hero-title">BELLE AIR<span class="sub">S V E T I &nbsp; V L A S</span></h1>
         <p class="hero-tagline">Элегантная жизнь у моря</p>
@@ -640,6 +643,17 @@
               </div>
               <div class="contact-phone">+359 89 517 66 85</div>
               <a href="https://wa.me/359895176685" class="btn btn-whatsapp">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.7 14.2c-.2.6-1.3 1.2-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.6.7 1.9.8 2 .1.2.1.4 0 .6-.1.2-.1.3-.3.5l-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.7-.1.3.1 1.7.8 2 .9.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg>
+                Написать в WhatsApp
+              </a>
+            </div>
+            <div class="contact-card">
+              <div class="contact-name">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+                Добриела
+              </div>
+              <div class="contact-phone">+359 88 909 0078</div>
+              <a href="https://wa.me/359889090078" class="btn btn-whatsapp">
                 <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.7 14.2c-.2.6-1.3 1.2-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.6.7 1.9.8 2 .1.2.1.4 0 .6-.1.2-.1.3-.3.5l-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.7-.1.3.1 1.7.8 2 .9.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg>
                 Написать в WhatsApp
               </a>
