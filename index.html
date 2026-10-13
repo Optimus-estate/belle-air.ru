@@ -323,11 +323,11 @@
   }
   .partners .container{
     display:grid;
-    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
     gap:clamp(24px, 3vw, 40px);
     align-items:center;
   }
-  .partners-title{ font-family:var(--font-serif); font-weight:700; font-size:clamp(22px, 1.6vw + 16px, 26px); }
+  .partners-title{ font-family:var(--font-serif); font-weight:700; font-size:clamp(22px, 1.6vw + 16px, 26px); line-height:1.25; }
   .partners-text{ color:rgba(255,255,255,0.78); font-size:14.5px; margin-top:10px; max-width:280px; }
   .partners-points{ display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:20px; }
   .partner-point{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
@@ -512,6 +512,21 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners" id="partners">
+    <div class="container">
+      <div>
+        <span class="eyebrow" style="color:rgba(255,255,255,0.7)">Для партнёров</span>
+        <h2 class="partners-title">Надёжное сотрудничество. Взаимный рост. Реальные возможности.</h2>
+      </div>
+      <div class="partners-points">
+        <div class="partner-point"><div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V8a8 8 0 0 1 16 0v3M5 11h14v10H5z"/></svg></div><span>Эксклюзивный доступ к объектам</span></div>
+        <div class="partner-point"><div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-9-9V3h8z"/></svg></div><span>Прямые цены от застройщика</span></div>
+        <div class="partner-point"><div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></div><span>Защита вашей комиссии</span></div>
+        <div class="partner-point"><div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zM14 3v5h5M9 13h6M9 17h4"/></svg></div><span>Юридическое сопровождение сделки</span></div>
       </div>
     </div>
   </section>
